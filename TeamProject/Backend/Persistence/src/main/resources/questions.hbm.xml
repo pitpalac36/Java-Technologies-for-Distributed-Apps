@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="tests.model.Question" table="questions">
+        <id name="ID"  type="int" column="qID">
+            <generator class="increment"/>
+        </id>
+        <property
+                name="description"
+                type="string"
+                column="description"
+        />
+        <property
+                name="answer"
+                type="boolean"
+                column="answer"
+        />
+    </class>
+</hibernate-mapping>

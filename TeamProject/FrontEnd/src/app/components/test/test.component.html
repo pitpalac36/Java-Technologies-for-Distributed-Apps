@@ -1,0 +1,40 @@
+<div class="child">
+    <div class="child3">
+        <div class="text-generate">
+            Genereaza numarul testului:
+        </div>
+        <input type="text" placeholder="Numar" [(ngModel)]="numberTest">
+        <input type="button" value="Genereaza" (click)="generateRandom()" class="btn-generate">
+    </div>
+    <div [hidden]="isVisible" class="spinner-test">
+        <mat-spinner></mat-spinner>
+    </div>
+    <div [hidden]="!isAvailable" class="child2">
+        <mat-card class="test-menu">
+            <ng-container *ngFor="let question of test.questions; let i=index">
+                <div [hidden]="question.isHidden">
+                    <div class="desc">
+                        {{question.description}}
+                    </div>
+                    <div class="answer-menu">
+                        <button (click)="sendAnswer(question.id, true)" class="btn-true">
+                            True
+                        </button>
+                        <button (click)="sendAnswer(question.id, false)" class="btn-false">
+                            False
+                        </button>
+                    </div>
+                    <button *ngIf="i+1 !== test.questions.length"
+                        (click)="checkIfAnswered(i)" class="btn-next">
+                        Next
+                    </button>
+                    <div *ngIf="i+1 === test.questions.length">
+                        <button (click)="sendResults()" class="btn-next">
+                            Sfarsit
+                        </button>
+                    </div>
+                </div>
+            </ng-container>
+        </mat-card>
+    </div>
+</div>

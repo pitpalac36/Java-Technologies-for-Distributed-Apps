@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="tests.model.Test" table="tests">
+        <id name="ID"  type="int" column="testId">
+            <generator class="increment"/>
+        </id>
+        <many-to-one name="q1"  class="tests.model.Question"
+                    cascade="all-delete-orphan" lazy="false" unique="true"/>
+        <many-to-one name="q2" class="tests.model.Question"
+                    cascade="all-delete-orphan" lazy="false" unique="true"/>
+        <many-to-one name="q3" class="tests.model.Question"
+                    cascade="all-delete-orphan" lazy="false" unique="true"/>
+        <many-to-one name="q4" class="tests.model.Question"
+                    cascade="all-delete-orphan" lazy="false" unique="true"/>
+        <many-to-one name="q5" class="tests.model.Question"
+                    cascade="all-delete-orphan" lazy="false" unique="true"/>
+    </class>
+</hibernate-mapping>

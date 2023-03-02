@@ -1,0 +1,13 @@
+plugins {
+    id 'war'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.11'
+    implementation group:'org.apache.tomcat', name:'tomcat-servlet-api', version: '8.5.24'
+    implementation 'javax.servlet:javax.servlet-api:+'
+}

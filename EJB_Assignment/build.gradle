@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+war {
+    archiveName = 'library.war'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    providedCompile 'org.projectlombok:lombok:1.18.22'
+    providedCompile group: 'javax.persistence', name: 'javax.persistence-api', version: '2.2'
+    providedCompile group: 'javax.ejb', name: 'javax.ejb-api', version: '3.2.2'
+    providedCompile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.4.10.Final'
+    compileOnly('javax:javaee-web-api:8.0.1')
+    implementation('org.hibernate:hibernate-core:5.4.0.CR2')
+    implementation('com.github.javafaker:javafaker:1.0.2')
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+}
